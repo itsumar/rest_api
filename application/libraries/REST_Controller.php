@@ -2331,5 +2331,18 @@ abstract class REST_Controller extends CI_Controller
         ], REST_Controller::HTTP_OK);
     }
 
+    /**
+     * Server error bad request
+     * response when server error
+     */
+    public function server_error_response()
+    {
+        return $this->response([
+            'status' => REST_Controller::HTTP_BAD_REQUEST,
+            'message' => $this->lang->line('text_api_server_error'),
+            'data' => new ArrayObject(),
+        ], REST_Controller::HTTP_BAD_REQUEST);
+    }
+
 
 }
